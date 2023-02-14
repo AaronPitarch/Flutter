@@ -40,25 +40,37 @@ class _ContadorPageState extends State<ContadorPage> {
         SizedBox(width: 30.0),
 
         FloatingActionButton(
-          onPressed: null,
+          onPressed: _reset,
           child: Icon(Icons.exposure_zero)
         ),
 
         Expanded(child: SizedBox()),
 
         FloatingActionButton(
-          onPressed: null,
+          onPressed: _sustraer,
           child: Icon(Icons.remove)
         ),
 
         SizedBox(width: 10.0),
 
         FloatingActionButton(
-          onPressed: null,
+          onPressed: _agregar,
           child: Icon(Icons.add)
         ),
       ],
     );
     
+  }
+
+  void _agregar() {   
+    setState(() =>_conteo++);
+  }
+
+  void _sustraer() {
+    setState(() =>_conteo--);
+  }
+
+  void _reset() {
+    setState(() =>_conteo = 0);
   }
 }
